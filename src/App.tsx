@@ -9,6 +9,7 @@ type Photo = {
 function App() {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(false);
+  
 
   // useEffect(() => {
   //   async function fetchPhotos() {
@@ -39,32 +40,51 @@ function App() {
 
         <div>
           <form>
-            <div>
-              <input type="radio" name="theme" id="white" className="peer hidden" />
-              <label
-                htmlFor="white"
-                className=" flex cursor-pointer w-[50px] h-[50px] rounded-full border-[ #f3f3f3] border-[5px] peer-checked:border-blue-500 relative"
-              >
-                <div className=" w-[40px] h-[40px] rounded-full absolute"></div>
-              </label>
-            </div>
-            <div>
-              <input type="radio" name="theme" id="blue" className="peer hidden" />
-              <label
-                htmlFor="blue"
-                className=" flex cursor-pointer w-[50px] h-[50px] rounded-full border-[ #f3f3f3] border-[5px] peer-checked:border-blue-500 relative"
-              >
-                <div className=" w-[40px] h-[40px] rounded-full absolute bg-green-800"></div>
-              </label>
-            </div>
-            <div>
-              <input type="radio" name="theme" id="green" className="peer hidden" />
-              <label
-                htmlFor="green"
-                className=" flex cursor-pointer w-[50px] h-[50px] rounded-full border-[ #f3f3f3] border-[5px] peer-checked:border-blue-500 relative"
-              >
-                <div className=" w-[40px] h-[40px] rounded-full absolute bg-violet-800"></div>
-              </label>
+            <div className="flex justify-center mt-8">
+              <div className="flex w-[200px] justify-between">
+                <div>
+                  <input
+                    type="radio"
+                    name="theme"
+                    id="white"
+                    className="peer hidden"
+                  />
+                  <label
+                    htmlFor="white"
+                    className=" flex cursor-pointer w-[50px] h-[50px] rounded-full border-[ #f3f3f3] border-[5px] peer-checked:border-blue-500 relative"
+                  >
+                    <div className=" w-[40px] h-[40px] rounded-full absolute"></div>
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="theme"
+                    id="blue"
+                    className="peer hidden"
+                  />
+                  <label
+                    htmlFor="blue"
+                    className=" flex cursor-pointer w-[50px] h-[50px] rounded-full border-[ #f3f3f3] border-[5px] peer-checked:border-blue-500 relative"
+                  >
+                    <div className=" w-[40px] h-[40px] rounded-full absolute bg-green-800"></div>
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="theme"
+                    id="green"
+                    className="peer hidden"
+                  />
+                  <label
+                    htmlFor="green"
+                    className=" flex cursor-pointer w-[50px] h-[50px] rounded-full border-[ #f3f3f3] border-[5px] peer-checked:border-blue-500 relative"
+                  >
+                    <div className=" w-[40px] h-[40px] rounded-full absolute bg-violet-800"></div>
+                  </label>
+                </div>
+              </div>
             </div>
           </form>
         </div>
