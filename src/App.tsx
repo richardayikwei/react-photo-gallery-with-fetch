@@ -51,9 +51,9 @@ function App() {
                   />
                   <label
                     htmlFor="white"
-                    className=" flex cursor-pointer w-[50px] h-[50px] rounded-full border-[ #f3f3f3] border-[5px] peer-checked:border-blue-500 relative"
+                    className=" flex cursor-pointer w-[50px] h-[50px] rounded-full hover:w-[60px] hover:h-[60px]  relative"
                   >
-                    <div className=" w-[40px] h-[40px] rounded-full absolute"></div>
+                    <div className=" border-[ #f3f3f3] border-[5px] peer-checked:border-blue-500 z-50 w-[50px] h-[50px] hover:w-[60px] hover:h-[60px] rounded-full absolute"></div>
                   </label>
                 </div>
                 <div>
@@ -65,9 +65,9 @@ function App() {
                   />
                   <label
                     htmlFor="blue"
-                    className=" flex cursor-pointer w-[50px] h-[50px] rounded-full border-[ #f3f3f3] border-[5px] peer-checked:border-blue-500 relative"
+                    className=" flex cursor-pointer w-[50px] h-[50px] rounded-full hover:w-[60px] hover:h-[60px]  relative"
                   >
-                    <div className=" w-[40px] h-[40px] rounded-full absolute bg-green-800"></div>
+                    <div className=" border-[ #f3f3f3] border-[5px] peer-checked:border-blue-500 z-50 w-[50px] h-[50px] hover:w-[60px] hover:h-[60px] rounded-full absolute bg-green-800"></div>
                   </label>
                 </div>
                 <div>
@@ -79,9 +79,9 @@ function App() {
                   />
                   <label
                     htmlFor="green"
-                    className=" flex cursor-pointer w-[50px] h-[50px] rounded-full border-[ #f3f3f3] border-[5px] peer-checked:border-blue-500 relative"
+                    className=" flex cursor-pointer w-[50px] h-[50px] rounded-full hover:w-[60px] hover:h-[60px]  relative"
                   >
-                    <div className=" w-[40px] h-[40px] rounded-full absolute bg-violet-800"></div>
+                    <div className=" border-[ #f3f3f3] border-[5px] peer-checked:border-blue-500 z-50 w-[50px] h-[50px] hover:w-[60px] hover:h-[60px] rounded-full absolute bg-violet-800"></div>
                   </label>
                 </div>
               </div>
