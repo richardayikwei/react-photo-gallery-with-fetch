@@ -41,19 +41,19 @@ function App() {
         <div>
           <form>
             <div className="flex justify-center mt-8">
-              <div className="flex w-[200px] justify-between">
+              <div className="flex w-[250px] justify-between">
                 <div>
                   <input
                     type="radio"
                     name="theme"
-                    id="white"
+                    id="orange"
                     className="peer hidden"
                   />
                   <label
-                    htmlFor="white"
-                    className=" flex cursor-pointer w-[50px] h-[50px] rounded-full hover:w-[60px] hover:h-[60px]  relative"
+                    htmlFor="orange"
+                    className=" flex cursor-pointer w-[70px] h-[70px] border-[5px] peer-checked:border-blue-500 rounded-full justify-center items-center"
                   >
-                    <div className=" border-[ #f3f3f3] border-[5px] peer-checked:border-blue-500 z-50 w-[50px] h-[50px] hover:w-[60px] hover:h-[60px] rounded-full absolute"></div>
+                    <div className="z-50 w-[50px] h-[50px] hover:w-[60px] hover:h-[60px] rounded-full bg-orange-500"></div>
                   </label>
                 </div>
                 <div>
@@ -65,9 +65,9 @@ function App() {
                   />
                   <label
                     htmlFor="blue"
-                    className=" flex cursor-pointer w-[50px] h-[50px] rounded-full hover:w-[60px] hover:h-[60px]  relative"
+                    className=" flex cursor-pointer w-[70px] h-[70px] border-[5px] peer-checked:border-blue-500 rounded-full justify-center items-center"
                   >
-                    <div className=" border-[ #f3f3f3] border-[5px] peer-checked:border-blue-500 z-50 w-[50px] h-[50px] hover:w-[60px] hover:h-[60px] rounded-full absolute bg-green-800"></div>
+                    <div className="z-50 w-[50px] h-[50px] hover:w-[60px] hover:h-[60px] rounded-full bg-green-800"></div>
                   </label>
                 </div>
                 <div>
@@ -79,9 +79,9 @@ function App() {
                   />
                   <label
                     htmlFor="green"
-                    className=" flex cursor-pointer w-[50px] h-[50px] rounded-full hover:w-[60px] hover:h-[60px]  relative"
+                    className=" flex cursor-pointer w-[70px] h-[70px] border-[5px] peer-checked:border-blue-500 rounded-full justify-center items-center"
                   >
-                    <div className=" border-[ #f3f3f3] border-[5px] peer-checked:border-blue-500 z-50 w-[50px] h-[50px] hover:w-[60px] hover:h-[60px] rounded-full absolute bg-violet-800"></div>
+                    <div className="z-50 w-[50px] h-[50px] hover:w-[60px] hover:h-[60px] rounded-full bg-violet-800"></div>
                   </label>
                 </div>
               </div>
