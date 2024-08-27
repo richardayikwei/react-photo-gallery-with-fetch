@@ -34,8 +34,8 @@ function App() {
   } else {
     return (
       <div className={`font-mono min-h-screen ${color}`}>
-        <div className="justify-center flex pt-10">
-          <h1 className="text-3xl font-bold">Photo Gallery with Fetch</h1>
+        <div className="justify-center flex pt-10 ">
+          <h1 className="text-3xl font-bold">Photo Gallery</h1>
         </div>
 
         <div>
@@ -96,7 +96,7 @@ function App() {
           </form>
         </div>
 
-        <div className=" justify-center flex mt-40">
+        <div className=" justify-center flex mt-40 pb-32">
           <div className=" md:grid md:grid-cols-3 md:gap-4">
             {photos.slice(0, 18).map((photo: Photo) => (
               <div
