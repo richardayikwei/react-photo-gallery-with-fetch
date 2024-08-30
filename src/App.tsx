@@ -25,6 +25,26 @@ function App() {
     fetchPhotos();
   }, []);
 
+    function allowDrop(e) {
+      e.preventDefault();
+  };
+
+    function handleDrag(e) {
+      e.dataTransfer.setData("text", e.target.id);
+  };
+
+    function handleDrop(e) {
+      e.preventDefault();
+      let data = e.dataTransfer.getData("text");
+      let element = document.getElementById(data);
+
+       if (element) {
+         e.target.appendChild(element);
+       } else {
+         console.error("Element not found or not a valid node:", data);
+       }
+  };
+
   if (loading) {
     return (
       <div className={`flex items-center justify-center h-screen`}>
@@ -96,10 +116,58 @@ function App() {
           </form>
         </div>
 
-        <div className=" justify-center flex mt-40 pb-32">
-          <div className=" md:grid md:grid-cols-3 md:gap-4">
+        <div className="flex items-center flex-col mt-10 ">
+          <div>
+            <h1>Drag and Drop cards here</h1>
+          </div>
+
+          <div className="border-2 rounded-full w-16 h-16 flex justify-center items-center mt-10 animate-bounce">
+            <div className="text-2xl ">&#8595;</div>
+          </div>
+        </div>
+
+        <div className="justify-between flex mt-20 container mx-auto">
+          <div
+            id="div1"
+            className="w-72 h-44 bg-orange-200 flex justify-center items-center"
+            onDrop={(e) => handleDrop(e)}
+            onDragOver={(e) => allowDrop(e)}
+            onDragStart={(e) => handleDrag(e)}
+          ></div>
+          <div
+            id="div1"
+            className="w-72 h-44 bg-orange-200 justify-center items-center flex"
+            onDrop={(e) => handleDrop(e)}
+            onDragOver={(e) => allowDrop(e)}
+            onDragStart={(e) => handleDrag(e)}
+          ></div>
+          <div
+            id="div1"
+            className="w-72 h-44 bg-orange-200 justify-center items-center flex"
+            onDrop={(e) => handleDrop(e)}
+            onDragOver={(e) => allowDrop(e)}
+            onDragStart={(e) => handleDrag(e)}
+          ></div>
+        </div>
+
+        <div
+          onDrop={(e) => handleDrop(e)}
+          onDragOver={(e) => allowDrop(e)}
+          onDragStart={(e) => handleDrag(e)}
+          className=" justify-center flex mt-40 pb-32"
+        >
+          <div
+            id="gridArea"
+            className=" md:grid md:grid-cols-3 md:gap-4"
+            onDrop={(e) => handleDrop(e)}
+            onDragOver={(e) => allowDrop(e)}
+            onDragStart={(e) => handleDrag(e)}
+          >
             {photos.slice(0, 18).map((photo: Photo) => (
               <div
+                draggable="true"
+                id={photo.id}
+                onDragStart={(e) => handleDrag(e)}
                 className="shadow-xl  xl:w-80 flex hover:bg-blue-400 md:my-0 my-8 bg-white"
                 key={photo.id}
               >
