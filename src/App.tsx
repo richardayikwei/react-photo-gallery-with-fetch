@@ -6,6 +6,8 @@ type Photo = {
   login: string;
 };
 
+
+
 function App() {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -25,15 +27,16 @@ function App() {
     fetchPhotos();
   }, []);
 
-    function allowDrop(e) {
+    function allowDrop(e: Event) {
       e.preventDefault();
   };
 
-    function handleDrag(e) {
+    function handleDrag(e : unknown) {
       e.dataTransfer.setData("text", e.target.id);
-  };
-
-    function handleDrop(e) {
+    };
+    
+    function handleDrop(e : unknown) {
+      console.log(e);
       e.preventDefault();
       let data = e.dataTransfer.getData("text");
       let element = document.getElementById(data);
