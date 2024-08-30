@@ -27,7 +27,7 @@ function App() {
     fetchPhotos();
   }, []);
 
-    function allowDrop(e: Event) {
+    function allowDrop(e: any) {
       e.preventDefault();
   };
 
