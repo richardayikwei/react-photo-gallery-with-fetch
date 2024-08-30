@@ -8,7 +8,6 @@ type Photo = {
 
 
 
-
 function App() {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -32,29 +31,21 @@ function App() {
       e.preventDefault();
   };
 
-  function handleDrag(e: DragEvent) {
-      
-    e.dataTransfer && e.target ?
-     ( e.dataTransfer.setData("text", e.target.id)) :
-      console.log('I am nul');
-      
-    };
-    
-    function handleDrop(e: DragEvent) {
-      e.preventDefault();
-      let data;
-      e.dataTransfer ? 
-        (data = e.dataTransfer.getData("text")):
-      console.log('I am null');
+    function handleDrag(e : any) {
+      e.dataTransfer.setData("text", e.target.id);
+  };
 
+    function handleDrop(e: any) {
+      e.preventDefault();
+      let data = e.dataTransfer.getData("text");
       let element = document.getElementById(data);
 
-      if (element && e.target) {
-        e.target.appendChild(element);
-      } else {
-        console.error("Element not found or not a valid node:", data);
-      }
-    };
+       if (element) {
+         e.target.appendChild(element);
+       } else {
+         console.error("Element not found or not a valid node:", data);
+       }
+  };
 
   if (loading) {
     return (
@@ -177,7 +168,7 @@ function App() {
             {photos.slice(0, 18).map((photo: Photo) => (
               <div
                 draggable="true"
-                id={`${photo.id}`}
+                id={photo.id}
                 onDragStart={(e) => handleDrag(e)}
                 className="shadow-xl  xl:w-80 flex hover:bg-blue-400 md:my-0 my-8 bg-white"
                 key={photo.id}
