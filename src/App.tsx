@@ -6,8 +6,6 @@ type Photo = {
   login: string;
 };
 
-
-
 function App() {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -19,34 +17,29 @@ function App() {
 
       const res = await fetch("https://api.github.com/users");
 
-     const photos = await res.json();
+      const photos = await res.json();
 
       setPhotos(photos);
       setLoading(false);
     }
     fetchPhotos();
   }, []);
-
-    function allowDrop(e: any) {
-      e.preventDefault();
-  };
-
-    function handleDrag(e : any) {
-      e.dataTransfer.setData("text", e.target.id);
-  };
-
-    function handleDrop(e: any) {
-      e.preventDefault();
-      let data = e.dataTransfer.getData("text");
-      let element = document.getElementById(data);
-
-       if (element) {
-         e.target.appendChild(element);
-       } else {
-         console.error("Element not found or not a valid node:", data);
-       }
-  };
-
+  function allowDrop(e: any) {
+    e.preventDefault();
+  }
+  function handleDrag(e: any) {
+    e.dataTransfer.setData("text", e.target.id);
+  }
+  function handleDrop(e: any) {
+    e.preventDefault();
+    let data = e.dataTransfer.getData("text");
+    let element = document.getElementById(data);
+    if (element) {
+      e.target.appendChild(element);
+    } else {
+      console.error("Element not found or not a valid node:", data);
+    }
+  }
   if (loading) {
     return (
       <div className={`flex items-center justify-center h-screen`}>
@@ -60,12 +53,10 @@ function App() {
           <h1 className="text-3xl font-bold">Photo Gallery</h1>
         </div>
 
-        <div>
+        <section>
           <form>
             <div className="flex flex-col items-center mt-8">
-              <div className="mb-8">
-                <h3 className="text-3xl">Select Theme</h3>
-              </div>
+              <h3 className="text-3xl mb-8">Select Theme</h3>
               <div className="flex w-[250px] justify-between">
                 <div>
                   <input
@@ -116,13 +107,10 @@ function App() {
               </div>
             </div>
           </form>
-        </div>
+        </section>
 
         <div className="flex items-center flex-col mt-10 ">
-          <div>
-            <h1>Drag and Drop cards here</h1>
-          </div>
-
+          <h1>Drag and Drop cards here</h1>
           <div className="border-2 rounded-full w-16 h-16 flex justify-center items-center mt-10 animate-bounce">
             <div className="text-2xl ">&#8595;</div>
           </div>
@@ -137,14 +125,14 @@ function App() {
             onDragStart={(e) => handleDrag(e)}
           ></div>
           <div
-            id="div1"
+            id="div2"
             className="w-72 h-44 bg-orange-200 justify-center items-center flex"
             onDrop={(e) => handleDrop(e)}
             onDragOver={(e) => allowDrop(e)}
             onDragStart={(e) => handleDrag(e)}
           ></div>
           <div
-            id="div1"
+            id="div3"
             className="w-72 h-44 bg-orange-200 justify-center items-center flex"
             onDrop={(e) => handleDrop(e)}
             onDragOver={(e) => allowDrop(e)}
@@ -174,7 +162,12 @@ function App() {
                 key={photo.id}
               >
                 <div className="w-1/2">
-                  <img src={photo.avatar_url} alt="" className="w-32" />
+                  <img
+                    src={photo.avatar_url}
+                    alt=""
+                    className="w-32"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="text-center my-auto w-1/2 ">
                   <h1>{photo.login}</h1>
