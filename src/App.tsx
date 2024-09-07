@@ -158,7 +158,7 @@ function App() {
                 draggable="true"
                 id={photo.id}
                 onDragStart={(e) => handleDrag(e)}
-                className="shadow-xl  xl:w-80 flex hover:bg-blue-400 md:my-0 my-8 bg-white"
+                className="shadow-xl  xl:w-80 flex hover:bg-blue-400 md:my-0 my-8 bg-white cursor-move"
                 key={photo.id}
               >
                 <div className="w-1/2">
@@ -169,7 +169,7 @@ function App() {
                     loading="lazy"
                   />
                 </div>
-                <div className="text-center my-auto w-1/2 ">
+                <div className="text-center my-auto w-1/2  ">
                   <h1>{photo.login}</h1>
                 </div>
               </div>
