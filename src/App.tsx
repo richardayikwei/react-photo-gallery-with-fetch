@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Footer from "./Footer";
 
 type Photo = {
   id: string;
@@ -176,6 +177,7 @@ function App() {
             ))}
           </div>
         </div>
+        <Footer />
       </div>
     );
   }
