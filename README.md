@@ -1,4 +1,13 @@
-# React + TypeScript + Vite
+# Photo Gallery
+
+A photo gallery using a fetch API. The gallery has a drag and drop capability and theme changer.
+
+## Technologies
+
+React and Tailwind CSS 
+
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
