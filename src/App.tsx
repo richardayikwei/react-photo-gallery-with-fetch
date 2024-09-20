@@ -111,7 +111,7 @@ function App() {
         </section>
 
         <div className="flex items-center flex-col mt-10 ">
-          <h1>Drag and Drop cards here</h1>
+          <h2>Drag and Drop cards here</h2>
           <div className="border-2 rounded-full w-16 h-16 flex justify-center items-center mt-10 animate-bounce">
             <div className="text-2xl ">&#8595;</div>
           </div>
@@ -171,7 +171,7 @@ function App() {
                   />
                 </div>
                 <div className="text-center my-auto w-1/2  ">
-                  <h1>{photo.login}</h1>
+                  <p>{photo.login}</p>
                 </div>
               </div>
             ))}
