@@ -16,15 +16,22 @@ function App() {
     async function fetchPhotos() {
       setLoading(true);
 
-      const res = await fetch("https://api.github.com/users");
+      try {
+        const res = await fetch("https://api.github.com/users");
 
-      const photos = await res.json();
-
-      setPhotos(photos);
-      setLoading(false);
+        if (!res.ok) {
+          throw new Error(`HTTP error: ${res.status}`);
+        }
+        const photos = await res.json();
+        setPhotos(photos);
+        setLoading(false);
+      } catch (e) {
+        console.error(`Users not retrieved ${e}`);
+      }
     }
     fetchPhotos();
   }, []);
+
   function allowDrop(e: any) {
     e.preventDefault();
   }
@@ -61,6 +68,7 @@ function App() {
               <div className="flex w-[250px] justify-between">
                 <div>
                   <input
+                    title="orange"
                     type="radio"
                     name="theme"
                     id="orange"
@@ -77,14 +85,15 @@ function App() {
                 </div>
                 <div>
                   <input
+                    title="green"
                     type="radio"
                     name="theme"
-                    id="blue"
+                    id="green"
                     className="peer hidden"
                     onChange={() => setColor("bg-green-800")}
                   />
                   <label
-                    htmlFor="blue"
+                    htmlFor="green"
                     className=" flex cursor-pointer w-[70px] h-[70px] border-[5px] peer-checked:border-blue-500 rounded-full justify-center items-center"
                   >
                     <div className="z-50 w-[50px] h-[50px] hover:w-[60px] hover:h-[60px] rounded-full bg-green-800"></div>
@@ -92,14 +101,15 @@ function App() {
                 </div>
                 <div>
                   <input
+                    title="violet"
                     type="radio"
                     name="theme"
-                    id="green"
+                    id="violet"
                     className="peer hidden"
                     onChange={() => setColor("bg-violet-800")}
                   />
                   <label
-                    htmlFor="green"
+                    htmlFor="violet"
                     className=" flex cursor-pointer w-[70px] h-[70px] border-[5px] peer-checked:border-blue-500 rounded-full justify-center items-center"
                   >
                     <div className="z-50 w-[50px] h-[50px] hover:w-[60px] hover:h-[60px] rounded-full bg-violet-800"></div>
