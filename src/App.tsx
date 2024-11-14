@@ -57,14 +57,14 @@ function App() {
   } else {
     return (
       <div className={`font-mono min-h-screen ${color}`}>
-        <div className="justify-center flex pt-10 ">
+        <header className="justify-center flex pt-10 ">
           <h1 className="text-3xl font-bold">Photo Gallery</h1>
-        </div>
+        </header>
 
         <section>
           <form>
             <div className="flex flex-col items-center mt-8">
-              <h3 className="text-3xl mb-8">Select Theme</h3>
+              <h2 className="text-3xl mb-8">Select Theme</h2>
               <div className="flex w-[250px] justify-between">
                 <div>
                   <input
@@ -172,14 +172,14 @@ function App() {
                 className="shadow-xl  xl:w-80 flex hover:bg-blue-400 md:my-0 my-8 bg-white cursor-move"
                 key={photo.id}
               >
-                <div className="w-1/2">
+                <figure className="w-1/2">
                   <img
                     src={photo.avatar_url}
                     alt=""
                     className="w-32"
                     loading="lazy"
                   />
-                </div>
+                </figure>
                 <div className="text-center my-auto w-1/2  ">
                   <p>{photo.login}</p>
                 </div>
