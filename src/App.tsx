@@ -127,7 +127,7 @@ function App() {
           </div>
         </div>
 
-        <div className="justify-between flex mt-20 container mx-auto">
+        <div className="justify-between flex mt-20 container mx-auto max-w-[60rem]">
           <div
             id="div1"
             className="w-72 h-44 bg-orange-200 flex justify-center items-center"
